@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </head>
+  <style>
+
+  </style>
+
+  <!-- TODO: firebase serve --only functions,hosting -->
+  <!-- TODO: Model it like this https://www.rebekah-joan.com/ -->
+
+  <body style="background-color: rgb(255, 236, 129);">
+    <div class="container-fluid">
+      <div class="row" style="padding-top: 7rem;">
+        <div class="column col-6">
+          <div class="col-12 thumb-post">
+            <a href="./getToKnow" title="">
+              <img
+                class="img-fluid"
+                src="https://www.alphashooters.com/wp-content/uploads/2019/01/sony-sel85f18-gsd-puppy-DSC00116-1300px.jpg"
+              />
+              <div class="carousel-caption" style="padding-left: 50%;">
+                <h3>get to know me</h3>
+              </div>
+            </a>
+          </div>
+          <div class="row">
+            <div class="col-6 thumb-post">
+              <a href="#">
+                <img
+                  class="img-fluid"
+                  src="https://live.staticflickr.com/7200/6832648466_76b561bcf6_b.jpg"
+                />
+                <div class="carousel-caption" style="bottom: 80%;">
+                  <h3>example text</h3>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 thumb-post">
+              <a href="./resume" title=""
+                ><img
+                  class="img-fluid"
+                  src="https://live.staticflickr.com/7200/6832648466_76b561bcf6_b.jpg"
+                />
+                <div class="carousel-caption">
+                  <h3>resume</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column col-6">
+          <div class="row">
+            <div class="col-6 thumb-post">
+              <a href="./believe" title=""
+                ><img
+                  class="img-fluid"
+                  src="https://i.pinimg.com/originals/dc/7f/be/dc7fbe4bca01c60edc16efa59f17a909.jpg"
+                />
+                <div class="carousel-caption" style="bottom: 80%;">
+                  <h3>what i believe</h3>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 thumb-post">
+              <img
+                class="img-fluid"
+                src="https://live.staticflickr.com/7200/6832648466_76b561bcf6_b.jpg"
+              />
+              <div class="carousel-caption">
+                <h3>example text</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 thumb-post">
+            <a href="#" title=""
+              ><img
+                class="img-fluid"
+                src="https://live.staticflickr.com/7200/6832648466_76b561bcf6_b.jpg"
+              />
+              <div class="carousel-caption" style="padding-left: 50%;">
+                <h3>photography</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <input type="file" name="file" />
+          <input type="submit" />
+        </form>
+      </div>
+    </div>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="/__/firebase/7.11.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="/__/firebase/7.11.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <!-- <script src="/__/firebase/7.11.0/firebase-auth.js"></script> -->
+    <script src="/__/firebase/7.11.0/firebase-storage.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // TODO: Look into this https://firebase.google.com/docs/hosting/reserved-urls#sdk_auto-configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBSFjSYy1xFS-9Kjuldrzwc5A7JFzMR1GU",
+        authDomain: "sophwebsite-eb0d2.firebaseapp.com",
+        databaseURL: "https://sophwebsite-eb0d2.firebaseio.com",
+        projectId: "sophwebsite-eb0d2",
+        storageBucket: "sophwebsite-eb0d2.appspot.com",
+        messagingSenderId: "742926466345",
+        appId: "1:742926466345:web:cd2124ff91120e1c358b38",
+        measurementId: "G-HXKP8T24XM",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      // firebase.storage();
+    </script>
+
+    <footer class="container-fluid">
+      <p>Footer Text</p>
+      <div class="row">
+        <img class="col-12" src="" id="myTestImage" />
+      </div>
+    </footer>
+  </body>
+
+  <script>
+    // Get a reference to the storage service, which is used to create references in your storage bucket
+    // var storage = firebase.storage();
+
+    // // Create a storage reference from our storage service
+    // var storageRef = storage.ref();
+    // console.log(storageRef);
+
+    // var imagesRef = storageRef.child("images/");
+
+    var imgUrl = "";
+
+    var storageRef = firebase.storage().ref("images/newImage.jpg");
+    storageRef.getDownloadURL().then(function (url) {
+      // console.log(url);
+      var imgUrl = url;
+
+      document.getElementById("myTestImage").src = url;
+    });
+
+    // var myTestImage = document.getElementById("myTestImage");
+    // $("#myTestImage").attr("src", imgUrl);
+    console.log(document.getElementById("myTestImage"));
+
+    // myTestImage.src = imgUrl;
+  </script>
+</html>

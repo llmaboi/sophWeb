@@ -1,0 +1,92 @@
+<nav class="navbar navbar-expand navbar-light">
+  <!-- TODO: Look into this for the navbar https://codeforgeek.com/how-to-detect-device-type-in-nodejs/ -->
+
+  <% switch (page_name) { case 'believe' : %>
+  <h2 class="col-7">what i believe</h2>
+  <% break; case 'education' : %>
+  <h2 class="col-7">education</h2>
+  <% break; case 'experience' : %>
+  <h2 class="col-7">experience</h2>
+  <% break; case 'getInTouch' : %>
+  <h2 class="col-7">get in touch</h2>
+  <% break; case 'getToKnow' : %>
+  <h2 class="col-7">get to know</h2>
+  <% break; case 'resume' : %>
+  <h2 class="col-7">resume</h2>
+  <% break; case 'skills' : %>
+  <h2 class="col-7">skills</h2>
+  <% break; } %>
+
+  <div class="col-5 collapse navbar-collapse">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a
+          class="nav-link <%= page_name == 'index' ? 'active' : '' %>"
+          href="../"
+        >
+          <h4>home</h4>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link <%= page_name == 'getToKnow' ? 'active' : '' %>"
+          href="./getToKnow"
+        >
+          <h4>get to know me</h4>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link <%= page_name == 'believe' ? 'active' : '' %>"
+          href="#"
+        >
+          <h4>what i believe</h4>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          id=" resumeDropdown"
+          class="dropdown-toggle nav-link <%= page_name == 'resume' ? 'active' : '' %>"
+          href="#"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <span class="h4">resume</span>
+        </a>
+        <div
+          class="dropdown-menu defaultColor"
+          aria-labelledby="resumeDropdown"
+        >
+          <a
+            class="dropdown-item defaultColor nav-link <%= page_name == 'education' ? 'active' : 'inactive' %>"
+            href="./education"
+          >
+            <h5>education</h5>
+          </a>
+          <a
+            class="dropdown-item defaultColor nav-link <%= page_name == 'skills' ? 'active' : 'inactive' %>"
+            href="./skills"
+          >
+            <h5>skills</h5>
+          </a>
+          <a
+            class="dropdown-item defaultColor nav-link <%= page_name == 'experience' ? 'active' : 'inactive' %>"
+            href="./experience"
+          >
+            <h5>experience</h5>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link <%= page_name == 'photography' ? 'active' : '' %>"
+          href="#"
+        >
+          <h4>photography</h4>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

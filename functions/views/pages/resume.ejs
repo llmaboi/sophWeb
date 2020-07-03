@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../shared/header', {page_title:"resume"}) %>
+
+  <style>
+    .thumb-post img {
+      object-fit: none;
+      /* Do not scale the image */
+      object-position: center;
+      /* Center the image within the element */
+      width: 100%;
+      max-height: 300px;
+      margin-bottom: 1rem;
+    }
+
+    .floatingLinkImage {
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: 0.5s ease;
+      backface-visibility: hidden;
+    }
+
+    .floatingLinkContainer {
+      position: relative;
+      /* width: 100%; */
+      display: block;
+    }
+
+    .floatingLinkMiddle {
+      transition: 0.5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .floatingLinkText {
+      position: absolute;
+      bottom: 50%;
+      right: 50%;
+    }
+
+    .floatingLinkContainer:hover .floatingLinkImage {
+      opacity: 0.3;
+    }
+
+    .floatingLinkContainer:hover .floatingLinkMiddle {
+      opacity: 1;
+    }
+
+    .floatingLinkText {
+      background-color: #4caf50;
+      color: white;
+      font-size: 16px;
+      padding: 16px 32px;
+    }
+  </style>
+
+  <body style="background-color: rgb(255, 236, 129);">
+    <div class="container-fluid">
+      <!-- Issues including the navbar shared... -->
+
+      <div class="row" style="padding-top: 7rem;">
+        <!-- TODO: For all of these floating links on mobile have it be a double click...
+        Meaning that you tap once to see the link or page info then tap again to navigate to it.
+       -->
+        <div class="col-6">
+          <a class="floatingLinkContainer" href="/education" title="">
+            <img
+              class="img-responsive floatingLinkImage"
+              style="max-width: 100%;"
+              src="https://www.alphashooters.com/wp-content/uploads/2019/01/sony-sel85f18-gsd-puppy-DSC00116-1300px.jpg"
+            />
+            <div class="floatingLinkMiddle">
+              <h3 class="floatingLinkText">education</h3>
+            </div>
+          </a>
+        </div>
+        <div class="col-6">
+          <a class="floatingLinkContainer" href="/skills">
+            <img
+              class="img-responsive floatingLinkImage"
+              style="max-width: 100%;"
+              src="https://live.staticflickr.com/7200/6832648466_76b561bcf6_b.jpg"
+            />
+
+            <div class="floatingLinkMiddle">
+              <h3 class="floatingLinkText">skills</h3>
+            </div>
+          </a>
+          <a class="floatingLinkContainer" href="/experience" title="">
+            <img
+              class="img-responsive floatingLinkImage"
+              style="max-width: 100%;"
+              src="https://live.staticflickr.com/7200/6832648466_76b561bcf6_b.jpg"
+            />
+
+            <div class="floatingLinkMiddle">
+              <h3 class="floatingLinkText">experience</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <%- include('../shared/footer', {page_title:"resume"}) %>
+  </body>
+</html>
