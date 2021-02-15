@@ -1,24 +1,37 @@
-<nav class="navbar navbar-expand navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light">
   <!-- TODO: Look into this for the navbar https://codeforgeek.com/how-to-detect-device-type-in-nodejs/ -->
 
   <% switch (page_name) { case 'believe' : %>
-  <h2 class="col-7">what i believe</h2>
+  <h2><a class="navbar-brand" href="javascript:;">what i believe</a></h2>
   <% break; case 'education' : %>
-  <h2 class="col-7">education</h2>
+  <h2><a class="navbar-brand" href="javascript:;">education</a></h2>
   <% break; case 'experience' : %>
-  <h2 class="col-7">experience</h2>
+  <h2>e<a class="navbar-brand" href="javascript:;">xperience</a></h2>
   <% break; case 'getInTouch' : %>
-  <h2 class="col-7">get in touch</h2>
+  <h2><a class="navbar-brand" href="javascript:;">get in touch</a></h2>
   <% break; case 'getToKnow' : %>
-  <h2 class="col-7">get to know</h2>
+  <h2><a class="navbar-brand" href="javascript:;">get to know me</a></h2>
   <% break; case 'resume' : %>
-  <h2 class="col-7">resume</h2>
+  <h2><a class="navbar-brand" href="javascript:;">resume</a></h2>
   <% break; case 'skills' : %>
-  <h2 class="col-7">skills</h2>
+  <h2><a class="navbar-brand" href="javascript:;">skills</a></h2>
   <% break; } %>
 
-  <div class="col-5 collapse navbar-collapse">
-    <ul class="navbar-nav">
+  <!-- TODO: This is where I need to see if I can set a minimum width and then make it hamburger -->
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#mainNav"
+    aria-controls="mainNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="mainNav">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
         <a
           class="nav-link <%= page_name == 'index' ? 'active' : '' %>"
@@ -38,7 +51,7 @@
       <li class="nav-item">
         <a
           class="nav-link <%= page_name == 'believe' ? 'active' : '' %>"
-          href="#"
+          href="javascript:;"
         >
           <h4>what i believe</h4>
         </a>
@@ -47,7 +60,7 @@
         <a
           id=" resumeDropdown"
           class="dropdown-toggle nav-link <%= page_name == 'resume' ? 'active' : '' %>"
-          href="#"
+          href="javascript:;"
           role="button"
           data-toggle="dropdown"
           aria-haspopup="true"
@@ -82,7 +95,7 @@
       <li class="nav-item">
         <a
           class="nav-link <%= page_name == 'photography' ? 'active' : '' %>"
-          href="#"
+          href="javascript:;"
         >
           <h4>photography</h4>
         </a>

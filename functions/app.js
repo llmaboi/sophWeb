@@ -9,14 +9,16 @@ const app = express();
 app.set("views", __dirname + "/views/pages");
 app.set("view engine", "ejs");
 
-app.use("/css", express.static(__dirname + "/node_modules/bootstrap/dist/css"));
+app.use("/bootstrap", express.static(__dirname + "/node_modules/bootstrap/dist/css"));
 app.use("/js", express.static(__dirname + "/node_modules/bootstrap/dist/js"));
 app.use("/js", express.static(__dirname + "/node_modules/jquery/dist"));
+app.use("/images", express.static(__dirname + "/images"))
+app.use("/css", express.static(__dirname + "/imports/css/main"));
 
 console.log(__dirname);
 
-// TODO: Start serve: npm run watch
-// TODO: Start serve: firebase serve --only functions,hosting
+// TODO: Start server: npm run watch
+// TODO: Start server: firebase serve --only functions,hosting
 app.get("/timestamp", (req, res) => {
   res.send(`${Date.now()}`);
 });

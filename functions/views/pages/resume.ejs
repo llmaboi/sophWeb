@@ -3,6 +3,17 @@
   <%- include('../shared/header', {page_title:"resume"}) %>
 
   <style>
+    /* .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 20px;
+      align-items: center;
+      justify-items: center;
+    }
+    .grid img {
+      padding: 5px;
+      max-width: 100%;
+    } */
     .thumb-post img {
       object-fit: none;
       /* Do not scale the image */
@@ -61,18 +72,17 @@
     }
   </style>
 
-  <body style="background-color: rgb(255, 236, 129);">
+  <body class="defaultColor">
     <div class="container-fluid">
-      <!-- Issues including the navbar shared... -->
-
+      <%- include('../shared/navbar', {page_name:"resume"}) %>
       <div class="row" style="padding-top: 7rem;">
         <!-- TODO: For all of these floating links on mobile have it be a double click...
         Meaning that you tap once to see the link or page info then tap again to navigate to it.
        -->
-        <div class="col-6">
-          <a class="floatingLinkContainer" href="/education" title="">
+        <div class="col-lg-4 col-md-12 mb-4">
+          <a class="floatingLinkContainer" href="/education" title="" style="padding-top: 56.25%;">
             <img
-              class="img-responsive floatingLinkImage"
+              class="img-fluid floatingLinkImage"
               style="max-width: 100%;"
               src="https://www.alphashooters.com/wp-content/uploads/2019/01/sony-sel85f18-gsd-puppy-DSC00116-1300px.jpg"
             />
@@ -81,10 +91,10 @@
             </div>
           </a>
         </div>
-        <div class="col-6">
+        <div class="col-lg-4 col-md-6 mb-4">
           <a class="floatingLinkContainer" href="/skills">
             <img
-              class="img-responsive floatingLinkImage"
+              class="img-fluid floatingLinkImage"
               style="max-width: 100%;"
               src="https://live.staticflickr.com/7200/6832648466_76b561bcf6_b.jpg"
             />
@@ -95,7 +105,7 @@
           </a>
           <a class="floatingLinkContainer" href="/experience" title="">
             <img
-              class="img-responsive floatingLinkImage"
+              class="img-fluid floatingLinkImage"
               style="max-width: 100%;"
               src="https://live.staticflickr.com/7200/6832648466_76b561bcf6_b.jpg"
             />
