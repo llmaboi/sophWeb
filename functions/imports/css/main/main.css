@@ -1,0 +1,26 @@
+.bgDefaultColor {
+  background-color: rgb(255, 236, 129);
+}
+
+.linkText {
+  position: relative;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  text-decoration: none;
+  color: #fff;
+  text-align: right;
+}
+.linkContainer:hover,
+.linkContainer:focus,
+.linkContainer:active {
+  text-decoration: none;
+  outline: 0;
+  /* opacity: 0.9; */
+  text-shadow: 0 0 4px black;
+}
+
+.pageText {
+  font-size: 2em;
+}
